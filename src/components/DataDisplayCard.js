@@ -8,11 +8,11 @@ function DataDisplayCard(props) {
   /* 
     props = {
     reading: "",
-    graph_link:"",
     metric: "",
+    graph_link:"https://abc.xyz",
     bar: {
-      left: { status: "", value: "" },
-      right: { status: "", value: "" },
+      left: { status: "(Excellent|Good|Normal|Offline)", value: "(<|>)[0-9]+" },
+      right: { status: "(Excellent|Good|Normal|Offline)", value: "(<|>)[0-9]+" },
     }
   }; 
   */
