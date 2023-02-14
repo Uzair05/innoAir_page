@@ -30,6 +30,22 @@ function App() {
         }}
         metric={"ppm"}
       />
+      <DataDisplayCard
+        reading={1400}
+        bar={{
+          left: { status: "Normal", value: "<1500" },
+          right: { status: "Offline", value: null },
+        }}
+        metric={"ppm"}
+      />
+      <DataDisplayCard
+        reading={1400}
+        bar={{
+          left: { status: "Normal", value: "<1500" },
+          right: { status: "Offline", value: null },
+        }}
+        metric={"ppm"}
+      />
     </DisplayBoard>
   );
 }
