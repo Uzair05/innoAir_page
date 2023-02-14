@@ -1,7 +1,5 @@
-import "./components/DataDisplayCard";
 import "./App.css";
 import DisplayBoard from "./components/DisplayBoard";
-import DataDisplayCard from "./components/DataDisplayCard";
 
 function App() {
   const items = [

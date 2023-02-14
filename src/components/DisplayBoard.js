@@ -3,7 +3,7 @@ import DataDisplayCard from "./DataDisplayCard";
 
 function DisplayBoard(props) {
   return (
-    <div>
+    <div className="displayBoard">
       {props.items.map((item) => {
         return (
           <DataDisplayCard
