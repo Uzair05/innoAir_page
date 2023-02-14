@@ -5,6 +5,18 @@ function DataDisplayCard(props) {
     return "_".concat(color_.toLowerCase());
   };
 
+  /* 
+    props = {
+    reading: "",
+    graph_link:"",
+    metric: "",
+    bar: {
+      left: { status: "", value: "" },
+      right: { status: "", value: "" },
+    }
+  }; 
+  */
+
   return (
     <div
       className={"OuterCircle"
@@ -12,7 +24,11 @@ function DataDisplayCard(props) {
         .concat(createColor(props.bar.left.status))}
     >
       <div className="InnerCircle">
-        <p className="InnerText">{props.reading}</p>
+        <p className="InnerText">
+          {props.reading}
+          <br />
+          {props.metric}
+        </p>
       </div>
 
       <div className="HorizontalBar">
