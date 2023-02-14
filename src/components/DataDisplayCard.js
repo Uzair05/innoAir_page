@@ -51,7 +51,7 @@ function DataDisplayCard(props) {
           <p className="HorizontalBar_text">
             {props.bar.right.status}
             <br />
-            {props.bar.right.value}
+            {props.bar.right.value === null ? "Null" : props.bar.right.value}
           </p>
         </div>
       </div>

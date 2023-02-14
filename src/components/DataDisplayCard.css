@@ -1,9 +1,11 @@
 .OuterCircle {
   border-radius: 50%;
   width: 1.8in;
-  aspect-ratio: 1/1;
-  height: 100%;
+  /* aspect-ratio: 1/1; */
+  height: 1.8in;
   color: white;
+  /* border: 2px solid black; */
+  box-shadow: 1px 1px 15px grey;
   text-shadow: 1px 1px 0px black;
 }
 .Outer_excellent {

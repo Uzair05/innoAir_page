@@ -1,10 +1,11 @@
 import "./components/DataDisplayCard";
 import "./App.css";
 import DataDisplayCard from "./components/DataDisplayCard";
+import DisplayBoard from "./components/DisplayBoard";
 
 function App() {
   return (
-    <div>
+    <DisplayBoard>
       <DataDisplayCard
         reading={750}
         bar={{
@@ -25,11 +26,11 @@ function App() {
         reading={1400}
         bar={{
           left: { status: "Normal", value: "<1500" },
-          right: { status: "Offline", value: "Null" },
+          right: { status: "Offline", value: null },
         }}
         metric={"ppm"}
       />
-    </div>
+    </DisplayBoard>
   );
 }
 
