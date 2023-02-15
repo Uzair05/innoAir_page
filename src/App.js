@@ -4,6 +4,7 @@ import DisplayBoard from "./components/DisplayBoard";
 function App() {
   const items = [
     {
+      title: "Dust",
       reading: 750,
       bar: {
         left: { status: "Excellent", value: "<800" },

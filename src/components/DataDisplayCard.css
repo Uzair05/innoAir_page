@@ -60,7 +60,8 @@ div.HorizontalBar {
 div.HorizontalBarLeft {
   height: 1cm;
   width: 50%;
-  border-radius: 25% 0% 0% 25%;
+  border-top-left-radius: 10pt;
+  border-bottom-left-radius: 10pt;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -69,7 +70,8 @@ div.HorizontalBarLeft {
 div.HorizontalBarRight {
   height: 1cm;
   width: 50%;
-  border-radius: 0% 25% 25% 0%;
+  border-top-right-radius: 10pt;
+  border-bottom-right-radius: 10pt;
   display: flex;
   align-content: center;
   justify-content: center;
