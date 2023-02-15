@@ -1,10 +1,15 @@
+.ComponentTitle {
+  text-align: center;
+  font-size: 25px;
+  color: #004000;
+  text-shadow: 1px 1px 1px whitesmoke;
+}
+
 .OuterCircle {
   border-radius: 50%;
   width: 1.8in;
-  /* aspect-ratio: 1/1; */
   height: 1.8in;
   color: white;
-  /* border: 2px solid black; */
   box-shadow: 1px 1px 15px grey;
   text-shadow: 1px 1px 0px black;
 }
@@ -12,7 +17,7 @@
   background: linear-gradient(90deg, #004000, #008000, #b2d8b2);
 }
 .Outer_good {
-  background: linear-gradient(90deg, #0000b2, #4c4cff, #b2b2ff);
+  background: linear-gradient(90deg, #7f9db9, #b2d0ec, #d8e7f5);
 }
 .Outer_normal {
   background: linear-gradient(90deg, #ffa500, #ffae19, #ffdb99);
@@ -75,7 +80,7 @@ div.HorizontalBar_excellent {
 }
 
 div.HorizontalBar_good {
-  background: linear-gradient(180deg, #0000b2, #4c4cff, #b2b2ff);
+  background: linear-gradient(180deg, #7f9db9, #b2d0ec, #d8e7f5);
 }
 
 div.HorizontalBar_normal {

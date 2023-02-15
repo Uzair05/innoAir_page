@@ -76,6 +76,7 @@ function App() {
       metric: "ppm",
     },
   ];
+
   return <DisplayBoard items={items} />;
 }
 
