@@ -1,8 +1,11 @@
 .ComponentTitle {
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
   color: #004000;
   text-shadow: 1px 1px 1px whitesmoke;
+  width: 90%;
+  height: auto;
+  margin: 50px auto auto auto;
 }
 
 .OuterCircle {
