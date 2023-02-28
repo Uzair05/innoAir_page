@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import BarChart from "./Pages/Plotout/BarChart";
+import LandingPage from "./Pages/LandingPage/LandingPage";
 import "./App.css";
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/">
-          <Route index element={<p>Smart Facility Management Portal</p>} />
+          <Route index element={<LandingPage />} />
 
           <Route path="/AIQ">
             <Route index element={<Dashboard />} />
