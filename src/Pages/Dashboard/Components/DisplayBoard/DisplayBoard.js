@@ -141,13 +141,19 @@ export default function DisplayBoard() {
       >
         {items_.map((d1, index) => {
           return (
-            <Stack id={index} direction="row" spacing={5}>
+            <Stack
+              key={"InnerStack_".concat(index.toString())}
+              direction="row"
+              spacing={5}
+            >
               {d1.map((d2) => {
                 return (
-                  <div style={{ width: "2in", height: "2in" }}>
+                  <div
+                    key={"Card_".concat(d2.title)}
+                    style={{ width: "2in", height: "2in" }}
+                  >
                     <Card
                       title={d2.title}
-                      id={d2.title}
                       reading={d2.reading}
                       metric={d2.metric}
                       graph_link={d2.graph_link}
