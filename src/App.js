@@ -10,16 +10,21 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/">
-          <Route index element={<p>Hello</p>} />
+          <Route index element={<p>Smart Facility Management Portal</p>} />
+
           <Route path="/AIQ">
             <Route index element={<Dashboard />} />
-            <Route path="/AIQ/CO2" element={<BarChart key_={"CO2"} />} />
-            <Route path="/AIQ/HCHO" element={<BarChart key_={"HCHO"} />} />
-            <Route path="/AIQ/HUMI" element={<BarChart key_={"HUMI"} />} />
-            <Route path="/AIQ/PM10" element={<BarChart key_={"PM10"} />} />
-            <Route path="/AIQ/PM25" element={<BarChart key_={"PM25"} />} />
-            <Route path="/AIQ/TEMP" element={<BarChart key_={"TEMP"} />} />
-            <Route path="/AIQ/TVOC" element={<BarChart key_={"TVOC"} />} />
+            <Route path="CO2" element={<BarChart key_={"CO2"} />} />
+            <Route path="HCHO" element={<BarChart key_={"HCHO"} />} />
+            <Route path="HUMI" element={<BarChart key_={"HUMI"} />} />
+            <Route path="PM10" element={<BarChart key_={"PM10"} />} />
+            <Route path="PM25" element={<BarChart key_={"PM25"} />} />
+            <Route path="TEMP" element={<BarChart key_={"TEMP"} />} />
+            <Route path="TVOC" element={<BarChart key_={"TVOC"} />} />
+          </Route>
+
+          <Route path="/AI_Project">
+            <Route index element={<p>AI Project</p>} />
           </Route>
         </Route>
       </Routes>
