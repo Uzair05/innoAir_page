@@ -41,7 +41,7 @@ const keyChain = {
     keyClassDefinition: ["< 20", "< 100", "> 100"],
   },
   PM25: {
-    title: "Fine Suspended Particulates PM10",
+    title: "Fine Suspended Particulates PM25",
     metric: "µg/m³",
     keyClass: (d) => {
       return d < 20 ? "Excellent" : d < 100 ? "Good" : "Normal";
