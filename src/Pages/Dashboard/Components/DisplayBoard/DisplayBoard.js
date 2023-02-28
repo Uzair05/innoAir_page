@@ -156,7 +156,7 @@ export default function DisplayBoard() {
                       title={d2.title}
                       reading={d2.reading}
                       metric={d2.metric}
-                      graph_link={d2.graph_link}
+                      graph_link={"AIQ".concat(d2.graph_link)}
                       bar={
                         d2.bar
                         /* {
