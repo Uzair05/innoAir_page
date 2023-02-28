@@ -1,0 +1,106 @@
+a.CardElement {
+  text-decoration: none;
+  width: 1.8in;
+  height: 2.5in;
+}
+.ComponentTitle {
+  text-align: center;
+  font-size: 15px;
+  color: #004000;
+  text-shadow: 1px 1px 1px whitesmoke;
+  width: 90%;
+  height: 10%;
+  margin: auto auto 25px auto;
+}
+
+.OuterCircle {
+  border-radius: 50%;
+  width: 1.8in;
+  height: 1.8in;
+  color: white;
+  box-shadow: 1px 1px 15px grey;
+  text-shadow: 1px 1px 0px black;
+}
+.Outer_excellent {
+  background: linear-gradient(90deg, #004000, #008000, #b2d8b2);
+}
+.Outer_good {
+  background: linear-gradient(90deg, #7f9db9, #b2d0ec, #d8e7f5);
+}
+.Outer_normal {
+  background: linear-gradient(90deg, #ffa500, #ffae19, #ffdb99);
+}
+.Outer_offline {
+  background: linear-gradient(90deg, #666666, #999999, #d8d8d8);
+}
+
+div.InnerCircle {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  width: 90%;
+  height: 90%;
+  border-style: solid;
+  border-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+}
+
+div.InnerCircle > p.InnerText {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+div.HorizontalBar {
+  margin-top: -40px;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+div.HorizontalBarLeft {
+  height: 1cm;
+  width: 50%;
+  border-top-left-radius: 10pt;
+  border-bottom-left-radius: 10pt;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+div.HorizontalBarRight {
+  height: 1cm;
+  width: 50%;
+  border-top-right-radius: 10pt;
+  border-bottom-right-radius: 10pt;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+div.HorizontalBar_excellent {
+  background: linear-gradient(0deg, #004000, #008000, #b2d8b2);
+}
+
+div.HorizontalBar_good {
+  background: linear-gradient(180deg, #7f9db9, #b2d0ec, #d8e7f5);
+}
+
+div.HorizontalBar_normal {
+  background: linear-gradient(0deg, #ffa500, #ffae19, #ffdb99);
+}
+div.HorizontalBar_offline {
+  background: linear-gradient(180deg, #666666, #999999, #d8d8d8);
+}
+
+p.HorizontalBar_text {
+  margin: auto;
+  text-align: center;
+}
