@@ -1,9 +1,11 @@
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import BarChart from "./Pages/Plotout/BarChart";
 import "./App.css";
 
 function App() {
+  document.title = "Robo Dynamix Limited";
   return (
     <BrowserRouter>
       <Routes>
