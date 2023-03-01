@@ -80,8 +80,9 @@ export default function BarChart(props) {
     // const response = await fetch(
     //   `https://1v2kgpsm3a.execute-api.ap-northeast-2.amazonaws.com/innoair/I01A002F001B?interval=${0}&from_time=${fr_time.toISOString()}&to_time=${to_time.toISOString()}`
     // );
+
     const response = await fetch(
-      `https://hhuyhjmtdhjmxjj77hdwx65uje0mpusv.lambda-url.ap-northeast-1.on.aws/?DateTime=${fr_time.getFullYear()}-${(
+      `https://zlpy3tcujcgirbkuvojeze7tiu0qkrfu.lambda-url.ap-northeast-1.on.aws/?DateTime=${fr_time.getFullYear()}-${(
         fr_time.getUTCMonth() + 1
       )
         .toString()
@@ -97,9 +98,9 @@ export default function BarChart(props) {
         .padStart(2, "0")}&Diff=${25}}`,
       {
         method: "GET",
-        mode: "no-cors",
-        credentials: "omit",
+        mode: "cors",
         headers: {
+          "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
         },
       }
