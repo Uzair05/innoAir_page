@@ -1,7 +1,7 @@
 import "./BarChart.css";
 import { useState, useEffect } from "react";
 import { Bar } from "react-chartjs-2";
-import axios from "axios";
+// import axios from "axios";
 import {
   Chart as ChartJS,
   BarElement,
@@ -86,7 +86,7 @@ export default function BarChart(props) {
     //   `https://1v2kgpsm3a.execute-api.ap-northeast-2.amazonaws.com/innoair/I01A002F001B?interval=${0}&from_time=${fr_time.toISOString()}&to_time=${to_time.toISOString()}`
     // );
 
-    const response = await axios.get(
+    const response = await fetch(
       `https://20hjp4tz9k.execute-api.ap-northeast-1.amazonaws.com/aiq_api?DateTime=${fr_time.getFullYear()}-${(
         fr_time.getUTCMonth() + 1
       )
@@ -103,12 +103,21 @@ export default function BarChart(props) {
         .padStart(2, "0")}&Diff=${5}`
     );
 
-    const data = response.data.map((items) => {
-      return Number(items[props.key_]);
-    });
+    // const data = response.data.map((items) => {
+    //   return Number(items[props.key_]);
+    // });
 
-    console.log(response.data);
-    console.log(data);
+    const reader = response.body.getReader();
+
+    let res = [];
+    let test = await reader.read();
+    while (test.done === false) {
+      res = res.concat(test.value);
+      test = await reader.read();
+    }
+
+    const res_ = new TextDecoder().decode(res);
+    console.log(res);
 
     const items = {
       labels: range(data.length),
