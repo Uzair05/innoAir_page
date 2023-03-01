@@ -74,12 +74,34 @@ export default function BarChart(props) {
 
   async function fetchAPI(props) {
     const fr_time = new Date();
-    fr_time.setTime(fr_time.getTime() - 20 * 60 * 1000);
-    const to_time = new Date();
+    // fr_time.setTime(fr_time.getTime() - 20 * 60 * 1000);
+    // const to_time = new Date();
 
+    // const response = await fetch(
+    //   `https://1v2kgpsm3a.execute-api.ap-northeast-2.amazonaws.com/innoair/I01A002F001B?interval=${0}&from_time=${fr_time.toISOString()}&to_time=${to_time.toISOString()}`
+    // );
     const response = await fetch(
-      `https://1v2kgpsm3a.execute-api.ap-northeast-2.amazonaws.com/innoair/I01A002F001B?interval=${0}&from_time=${fr_time.toISOString()}&to_time=${to_time.toISOString()}`
+      `https://hhuyhjmtdhjmxjj77hdwx65uje0mpusv.lambda-url.ap-northeast-1.on.aws/?DateTime=${fr_time.getFullYear()}-${(
+        fr_time.getUTCMonth() + 1
+      )
+        .toString()
+        .padStart(2, "0")}-${fr_time
+        .getUTCDate()
+        .toString()
+        .padStart(2, "0")}T${fr_time
+        .getUTCHours()
+        .toString()
+        .padStart(2, "0")}:${fr_time
+        .getUTCMinutes()
+        .toString()
+        .padStart(2, "0")}&Diff=${25}}`
+      /* ,{
+        method: "GET",
+        mode: "no-cors",
+        credentials: "omit",
+      } */
     );
+
     const data = await response.json();
 
     console.log(data);
