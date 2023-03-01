@@ -15,7 +15,7 @@ function App() {
 
           <Route path="/AIQ">
             <Route index element={<Dashboard />} />
-            <Route path="CO2" element={<BarChart key_={"CO2"} />} />
+            <Route path="CO2" element={<BarChart key_={"C02"} />} />
             <Route path="HCHO" element={<BarChart key_={"HCHO"} />} />
             <Route path="HUMI" element={<BarChart key_={"HUMI"} />} />
             <Route path="PM10" element={<BarChart key_={"PM10"} />} />

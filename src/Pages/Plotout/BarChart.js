@@ -33,14 +33,18 @@ const range = (a) => {
 const min = (a) => {
   let min_ = a[0];
   for (let i = 1; i < a.length; i++) {
-    if (a[i] < min_) min_ = a[i];
+    if (a[i] < min_) {
+      min_ = a[i];
+    }
   }
   return min_;
 };
 const max = (a) => {
   let max_ = a[0];
   for (let i = 1; i < a.length; i++) {
-    if (a[i] > max_) max_ = a[i];
+    if (a[i] > max_) {
+      max_ = a[i];
+    }
   }
   return max_;
 };
@@ -82,12 +86,8 @@ export default function BarChart(props) {
     //   `https://1v2kgpsm3a.execute-api.ap-northeast-2.amazonaws.com/innoair/I01A002F001B?interval=${0}&from_time=${fr_time.toISOString()}&to_time=${to_time.toISOString()}`
     // );
 
-    // const response = await axios.get(
-    //   `https://1v2kgpsm3a.execute-api.ap-northeast-2.amazonaws.com/innoair/I01A002F001B?interval=${0}&from_time=${fr_time.toISOString()}&to_time=${to_time.toISOString()}`
-    // );
-
-    const response = await axios({
-      url: `https://zlpy3tcujcgirbkuvojeze7tiu0qkrfu.lambda-url.ap-northeast-1.on.aws/?DateTime=${fr_time.getFullYear()}-${(
+    const response = await axios.get(
+      `https://20hjp4tz9k.execute-api.ap-northeast-1.amazonaws.com/aiq_api?DateTime=${fr_time.getFullYear()}-${(
         fr_time.getUTCMonth() + 1
       )
         .toString()
@@ -100,22 +100,22 @@ export default function BarChart(props) {
         .padStart(2, "0")}:${fr_time
         .getUTCMinutes()
         .toString()
-        .padStart(2, "0")}&Diff=${25}}`,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Content-type": "application/json",
-      },
-      method: "GET",
+        .padStart(2, "0")}&Diff=${5}`
+    );
+
+    const data = response.data.map((items) => {
+      return Number(items[props.key_]);
     });
 
-    const data = response["data"];
+    console.log(response.data);
+    console.log(data);
 
     const items = {
-      labels: range(data.data[props.key_].length),
+      labels: range(data.length),
       datasets: [
         {
           label: props.key_,
-          data: data.data[props.key_],
+          data: data,
           backgroundColor: "aqua",
           borderColor: "black",
           pointBorderColor: "green",
@@ -138,8 +138,8 @@ export default function BarChart(props) {
       legend: true,
       scales: {
         y: {
-          min: max([min([...data.data[props.key_]]) - 5, 0]),
-          max: max([...data.data[props.key_]]) + 5,
+          min: max([min([...data] - 10), 0]),
+          max: max([...data]) + 10,
         },
         x: {},
       },
