@@ -94,12 +94,15 @@ export default function BarChart(props) {
         .padStart(2, "0")}:${fr_time
         .getUTCMinutes()
         .toString()
-        .padStart(2, "0")}&Diff=${25}}`
-      /* ,{
+        .padStart(2, "0")}&Diff=${25}}`,
+      {
         method: "GET",
         mode: "no-cors",
         credentials: "omit",
-      } */
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
     );
 
     const data = await response.json();
