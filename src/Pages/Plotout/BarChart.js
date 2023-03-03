@@ -78,16 +78,12 @@ export default function BarChart(props) {
   }, [props]);
 
   async function fetchAPI(props) {
-    const fr_time = new Date();
+    // const fr_time = new Date();
     // fr_time.setTime(fr_time.getTime() - 20 * 60 * 1000);
     // const to_time = new Date();
 
-    // const response = await fetch(
-    //   `https://1v2kgpsm3a.execute-api.ap-northeast-2.amazonaws.com/innoair/I01A002F001B?interval=${0}&from_time=${fr_time.toISOString()}&to_time=${to_time.toISOString()}`
-    // );
-
-    const response = await fetch(
-      `https://20hjp4tz9k.execute-api.ap-northeast-1.amazonaws.com/aiq_api?DateTime=${fr_time.getFullYear()}-${(
+    /* const response = await fetch(
+      `https://zlpy3tcujcgirbkuvojeze7tiu0qkrfu.lambda-url.ap-northeast-1.on.aws/?DateTime=${fr_time.getFullYear()}-${(
         fr_time.getUTCMonth() + 1
       )
         .toString()
@@ -100,31 +96,49 @@ export default function BarChart(props) {
         .padStart(2, "0")}:${fr_time
         .getUTCMinutes()
         .toString()
-        .padStart(2, "0")}&Diff=${5}`
+        .padStart(2, "0")}&Diff=${5}`,
+      {
+        method: "GET",
+        headers: {
+          origin: "",
+          "Access-Control-Request-Method": "GET",
+        },
+      }
+    ); */
+
+    const response = await fetch(
+      "https://zlpy3tcujcgirbkuvojeze7tiu0qkrfu.lambda-url.ap-northeast-1.on.aws/?DateTime=2023-03-01T10:50&Diff=25"
     );
 
-    // const data = response.data.map((items) => {
-    //   return Number(items[props.key_]);
-    // });
+    async function readAllChunks(readableStream) {
+      const reader = readableStream.getReader();
+      const chunks = [];
 
-    const reader = response.body.getReader();
+      let done, value;
+      while (!done) {
+        ({ value, done } = await reader.read());
+        if (done) {
+          return chunks;
+        }
+        chunks.push(value);
+      }
 
-    let res = [];
-    let test = await reader.read();
-    while (test.done === false) {
-      res = res.concat(test.value);
-      test = await reader.read();
+      return chunks;
     }
+    const uint8_ = await readAllChunks(response.body);
+    const uint8_decoded = new TextDecoder().decode(uint8_[0]);
+    const data = JSON.parse(uint8_decoded);
 
-    const res_ = new TextDecoder().decode(res);
-    console.log(res);
+    data[props.key_] = data[props.key_].map((item) => {
+      return Number(item);
+    });
 
     const items = {
-      labels: range(data.length),
+      labels: range(data[props.key_].length),
       datasets: [
         {
           label: props.key_,
-          data: data,
+          data: data[props.key_],
           backgroundColor: "aqua",
           borderColor: "black",
           pointBorderColor: "green",
@@ -147,8 +161,8 @@ export default function BarChart(props) {
       legend: true,
       scales: {
         y: {
-          min: max([min([...data] - 10), 0]),
-          max: max([...data]) + 10,
+          min: max([min(data[props.key_]) - 5, 0]),
+          max: max(data[props.key_]) + 5,
         },
         x: {},
       },
