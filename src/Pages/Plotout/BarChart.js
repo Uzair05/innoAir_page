@@ -139,7 +139,7 @@ export default function BarChart(props) {
         {
           label: props.key_,
           data: data[props.key_],
-          backgroundColor: "aqua",
+          backgroundColor: "#FFA500",
           borderColor: "black",
           pointBorderColor: "green",
           fill: false,
@@ -173,9 +173,13 @@ export default function BarChart(props) {
   }
 
   return (
-    <div style={{ width: "80%", height: "auto", margin: "auto" }}>
-      <h1 style={{ textAlign: "center" }}>History Bar Chart - {props.key_}</h1>
-      <Bar data={data} options={options}></Bar>
+    <div style={{ width: "70%", height: "auto", margin: "auto" }}>
+      <h1 style={{ textAlign: "center", textShadow: "1px 1px white" }}>
+        History Bar Chart - {props.key_}
+      </h1>
+      <div style={{ backgroundColor: "rgba(255, 255, 255, 0.65)" }}>
+        <Bar data={data} options={options}></Bar>
+      </div>
     </div>
   );
 }
