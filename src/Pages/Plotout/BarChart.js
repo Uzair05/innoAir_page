@@ -78,36 +78,27 @@ export default function BarChart(props) {
   }, [props]);
 
   async function fetchAPI(props) {
-    // const fr_time = new Date();
-    // fr_time.setTime(fr_time.getTime() - 20 * 60 * 1000);
+    const fr_time = new Date();
+    fr_time.setTime(fr_time.getTime() - 2 * 60 * 1000);
     // const to_time = new Date();
 
-    /* const response = await fetch(
-      `https://zlpy3tcujcgirbkuvojeze7tiu0qkrfu.lambda-url.ap-northeast-1.on.aws/?DateTime=${fr_time.getFullYear()}-${(
-        fr_time.getUTCMonth() + 1
-      )
+    const response = await fetch(
+      `https://zlpy3tcujcgirbkuvojeze7tiu0qkrfu.lambda-url.ap-northeast-1.on.aws/?DateTime=${
+        "2023-03-02T10:50" /* fr_time
+        .getFullYear()
+        .toString()}-${(fr_time.getMonth() + 1)
         .toString()
         .padStart(2, "0")}-${fr_time
-        .getUTCDate()
+        .getDate()
         .toString()
         .padStart(2, "0")}T${fr_time
-        .getUTCHours()
+        .getHours()
         .toString()
         .padStart(2, "0")}:${fr_time
-        .getUTCMinutes()
+        .getMinutes()
         .toString()
-        .padStart(2, "0")}&Diff=${5}`,
-      {
-        method: "GET",
-        headers: {
-          origin: "",
-          "Access-Control-Request-Method": "GET",
-        },
-      }
-    ); */
-
-    const response = await fetch(
-      "https://zlpy3tcujcgirbkuvojeze7tiu0qkrfu.lambda-url.ap-northeast-1.on.aws/?DateTime=2023-03-01T10:50&Diff=25"
+        .padStart(2, "0") */
+      }&Diff=25`
     );
 
     async function readAllChunks(readableStream) {
@@ -134,12 +125,14 @@ export default function BarChart(props) {
     });
 
     const items = {
-      labels: range(data[props.key_].length),
+      // labels: range(data[props.key_].length),
+      labels: data["id"].reverse(),
       datasets: [
         {
           label: props.key_,
-          data: data[props.key_],
+          data: data[props.key_].reverse(),
           backgroundColor: "#FFA500",
+          hoverBackgroundColor: "hotpink",
           borderColor: "black",
           pointBorderColor: "green",
           fill: false,
@@ -173,11 +166,9 @@ export default function BarChart(props) {
   }
 
   return (
-    <div style={{ width: "70%", height: "auto", margin: "auto" }}>
-      <h1 style={{ textAlign: "center", textShadow: "1px 1px white" }}>
-        History Bar Chart - {props.key_}
-      </h1>
-      <div style={{ backgroundColor: "rgba(255, 255, 255, 0.65)" }}>
+    <div className="barChartContainer">
+      <h1>History Bar Chart - {props.key_}</h1>
+      <div className="chartContainer">
         <Bar data={data} options={options}></Bar>
       </div>
     </div>

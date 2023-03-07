@@ -1,14 +1,12 @@
 h1.PageTitle {
   text-align: center;
 }
-
 #root {
-  min-height: 100vh;
-}
-
-body {
-  padding: 0;
-  margin: 0;
+  min-height: 150vh;
   border: 1px solid black;
   background: repeating-radial-gradient(circle at 0 0, #b3e2f1, #e0f3f9 50px);
+}
+
+div.LandingBody {
+  background-color: rgba(255, 255, 255, 0.65);
 }

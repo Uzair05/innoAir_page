@@ -1,0 +1,12 @@
+div.barChartContainer {
+  width: 70%;
+  height: auto;
+  margin: auto;
+}
+div.barChartContainer > h1 {
+  text-align: center;
+  text-shadow: 1px 1px white;
+}
+div.barChartContainer > div.chartContainer {
+  background-color: rgba(255, 255, 255, 0.65);
+}

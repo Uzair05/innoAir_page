@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import BarChart from "./Pages/Plotout/BarChart";
 import LandingPage from "./Pages/LandingPage/LandingPage";
+import AIProject from "./Pages/AI_Project/AI_Project";
 import "./App.css";
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
           </Route>
 
           <Route path="/AI_Project">
-            <Route index element={<p>AI Project</p>} />
+            <Route index element={<AIProject />} />
           </Route>
         </Route>
       </Routes>
