@@ -110,7 +110,7 @@ export default function AppBarComponent(props) {
               align="center"
               variant="p"
               component="a"
-              href="/Train_Watch"
+              href="/AI_Project/TrainWatch"
               sx={{
                 mr: 2,
                 display: { xs: "flex", md: "flex" },
@@ -129,7 +129,7 @@ export default function AppBarComponent(props) {
               align="center"
               variant="p"
               component="a"
-              href="/Wild_Board"
+              href="/AI_Project/WildBoar"
               sx={{
                 mr: 2,
                 display: { xs: "flex", md: "flex" },
@@ -140,7 +140,7 @@ export default function AppBarComponent(props) {
                 textDecoration: "none",
               }}
             >
-              Wild Boards
+              Wild Boar
             </Typography>
           </MenuItem>
         </Menu>

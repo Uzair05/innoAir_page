@@ -84,18 +84,15 @@ export default function BarChart(props) {
 
     const response = await fetch(
       `https://zlpy3tcujcgirbkuvojeze7tiu0qkrfu.lambda-url.ap-northeast-1.on.aws/?DateTime=${
-        "2023-03-02T10:50" /* fr_time
-        .getFullYear()
-        .toString()}-${(fr_time.getMonth() + 1)
-        .toString()
-        .padStart(2, "0")}-${fr_time
+        "2023-03-02T10:50" /* fr_time.getFullYear().toString()
+      }-${(fr_time.getMonth() + 1).toString().padStart(2, "0")}-${fr_time
         .getDate()
         .toString()
         .padStart(2, "0")}T${fr_time
-        .getHours()
+        .getUTCHours()
         .toString()
         .padStart(2, "0")}:${fr_time
-        .getMinutes()
+        .getUTCMinutes()
         .toString()
         .padStart(2, "0") */
       }&Diff=25`
