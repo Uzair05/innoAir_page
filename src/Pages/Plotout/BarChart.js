@@ -1,7 +1,7 @@
 import "./BarChart.css";
 import { useState, useEffect } from "react";
 import { Bar } from "react-chartjs-2";
-// import axios from "axios";
+import AppBarComponent from "../../Components/AppBarComponent";
 import {
   Chart as ChartJS,
   BarElement,
@@ -137,16 +137,7 @@ export default function BarChart(props) {
           pointBorderColor: "green",
           fill: false,
           tension: 0.4,
-        } /* ,
-        {
-          label: "HCHO",
-          data: data.data["HCHO"],
-          backgroundColor: "yellow",
-          borderColor: "black",
-          pointBorderColor: "green",
-          fill: false,
-          tension: 0.4,
-        }, */,
+        },
       ],
     };
 
@@ -166,10 +157,13 @@ export default function BarChart(props) {
   }
 
   return (
-    <div className="barChartContainer">
-      <h1>History Bar Chart - {props.key_}</h1>
-      <div className="chartContainer">
-        <Bar data={data} options={options}></Bar>
+    <div>
+      <AppBarComponent />
+      <div className="barChartContainer">
+        <h1>History Bar Chart - {props.key_}</h1>
+        <div className="chartContainer">
+          <Bar data={data} options={options}></Bar>
+        </div>
       </div>
     </div>
   );

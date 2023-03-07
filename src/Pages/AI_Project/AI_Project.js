@@ -1,11 +1,14 @@
+import React from "react";
 import AppBarComponent from "../../Components/AppBarComponent";
 import "./AI_Project.css";
 
 export default function AIProject() {
   return (
-    <div className="AI_ProjectContainer">
+    <div>
       <AppBarComponent />
-      <h1>AI Project</h1>
+      <div className="AI_ProjectContainer">
+        <h1>AI Project</h1>
+      </div>
     </div>
   );
 }
