@@ -23,13 +23,13 @@ ChartJS.register(
   Tooltip
 );
 
-const range = (a) => {
+/* const range = (a) => {
   let tmp = [];
   for (let i = 0; i < a; i++) {
     tmp.push(i);
   }
   return tmp;
-};
+}; */
 const min = (a) => {
   let min_ = a[0];
   for (let i = 1; i < a.length; i++) {
