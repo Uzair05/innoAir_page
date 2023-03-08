@@ -6,7 +6,9 @@ export default function WildBoar(props) {
   return (
     <div>
       <AppBarComponent />
-      <h1>Wild Boar</h1>
+      <div className="AI_ProjectContainer">
+        <h1>Wild Boar</h1>
+      </div>
     </div>
   );
 }

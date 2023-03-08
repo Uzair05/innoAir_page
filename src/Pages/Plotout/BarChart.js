@@ -79,7 +79,7 @@ export default function BarChart(props) {
 
   async function fetchAPI(props) {
     const fr_time = new Date();
-    fr_time.setTime(fr_time.getTime() - 20 * 60 * 1000);
+    fr_time.setTime(fr_time.getTime() - 10 * 60 * 1000);
     // const to_time = new Date();
 
     const response = await fetch(

@@ -6,7 +6,9 @@ export default function TrainWatch(props) {
   return (
     <div>
       <AppBarComponent />
-      <h1>Train Watch</h1>
+      <div className="AI_ProjectContainer">
+        <h1>Train Watch</h1>
+      </div>
     </div>
   );
 }
