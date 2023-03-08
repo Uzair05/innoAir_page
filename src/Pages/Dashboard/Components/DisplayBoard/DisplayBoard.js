@@ -154,9 +154,13 @@ export default function DisplayBoard() {
                   >
                     <Card
                       title={d2.title}
-                      reading={d2.reading}
+                      reading={d2.reading > 0 ? d2.reading : d2.bar.left.value}
                       metric={d2.metric}
-                      graph_link={"AIQ".concat(d2.graph_link)}
+                      graph_link={
+                        d2.reading > 0
+                          ? "IAQ".concat(d2.graph_link)
+                          : "javascript:void(0)"
+                      }
                       bar={
                         d2.bar
                         /* {

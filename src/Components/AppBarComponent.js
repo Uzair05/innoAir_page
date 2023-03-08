@@ -41,7 +41,7 @@ export default function AppBarComponent(props) {
             align="center"
             variant="h6"
             component="a"
-            href="/AIQ"
+            href="/IAQ"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "flex" },
@@ -52,7 +52,7 @@ export default function AppBarComponent(props) {
               textDecoration: "none",
             }}
           >
-            AIQ
+            IAQ
           </Typography>
         </Button>
         <Button
@@ -74,7 +74,7 @@ export default function AppBarComponent(props) {
               textDecoration: "none",
             }}
           >
-            AI_Project
+            AI_Projects
           </Typography>
         </Button>
         <Menu
@@ -102,7 +102,7 @@ export default function AppBarComponent(props) {
                 textDecoration: "none",
               }}
             >
-              AI Project Main Page
+              AI Facilities Management
             </Typography>
           </MenuItem>
           <MenuItem onClick={handleClose}>

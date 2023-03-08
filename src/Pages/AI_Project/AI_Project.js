@@ -7,7 +7,7 @@ export default function AIProject() {
     <div>
       <AppBarComponent />
       <div className="AI_ProjectContainer">
-        <h1>AI Project</h1>
+        <h1>AI Facilities Management</h1>
       </div>
     </div>
   );

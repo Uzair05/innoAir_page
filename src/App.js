@@ -16,7 +16,7 @@ function App() {
         <Route path="/">
           <Route index element={<LandingPage />} />
 
-          <Route path="AIQ">
+          <Route path="IAQ">
             <Route index element={<Dashboard />} />
             <Route path="CO2" element={<BarChart key_={"C02"} />} />
             <Route path="HCHO" element={<BarChart key_={"HCHO"} />} />
