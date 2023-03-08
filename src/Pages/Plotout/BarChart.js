@@ -79,12 +79,12 @@ export default function BarChart(props) {
 
   async function fetchAPI(props) {
     const fr_time = new Date();
-    fr_time.setTime(fr_time.getTime() - 2 * 60 * 1000);
+    fr_time.setTime(fr_time.getTime() - 20 * 60 * 1000);
     // const to_time = new Date();
 
     const response = await fetch(
       `https://zlpy3tcujcgirbkuvojeze7tiu0qkrfu.lambda-url.ap-northeast-1.on.aws/?DateTime=${
-        "2023-03-02T10:50" /* fr_time.getFullYear().toString()
+        /* "2023-03-02T10:50" */ fr_time.getFullYear().toString()
       }-${(fr_time.getMonth() + 1).toString().padStart(2, "0")}-${fr_time
         .getDate()
         .toString()
@@ -94,8 +94,7 @@ export default function BarChart(props) {
         .padStart(2, "0")}:${fr_time
         .getUTCMinutes()
         .toString()
-        .padStart(2, "0") */
-      }&Diff=25`
+        .padStart(2, "0")}&Diff=25`
     );
 
     async function readAllChunks(readableStream) {
